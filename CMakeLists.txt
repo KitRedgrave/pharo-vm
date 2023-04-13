@@ -436,7 +436,7 @@ check_struct_has_member("struct tm" tm_gmtoff time.h HAVE_TM_GMTOFF)
 check_include_files(sys/uuid.h HAVE_SYS_UUID_H)
 check_include_files(uuid/uuid.h HAVE_UUID_UUID_H)
 check_include_files(uuid.h HAVE_UUID_H)
-check_library_exists(uuid uuidgen "" HAVE_UUIDGEN)
+#check_library_exists(uuid uuidgen "" HAVE_UUIDGEN)
 check_library_exists(uuid uuid_generate "" HAVE_UUID_GENERATE)
 
 
