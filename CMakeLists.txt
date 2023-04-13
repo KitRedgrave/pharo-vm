@@ -48,8 +48,8 @@ if(VERBOSE_BUILD)
 endif(VERBOSE_BUILD)
 
 # Extract VCS information
-include(cmake/versionExtraction.cmake)
-extractVCSInformation(GIT_COMMIT_HASH GIT_DESCRIBE GIT_COMMIT_DATE)
+#include(cmake/versionExtraction.cmake)
+#extractVCSInformation(GIT_COMMIT_HASH GIT_DESCRIBE GIT_COMMIT_DATE)
 
 set(VERSION_MAJOR 10)
 set(VERSION_MINOR 0)
@@ -62,7 +62,7 @@ else()
 endif(BUILD_IS_RELEASE)
 
 message(STATUS "Building version ${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH}")
-message(STATUS "Commit hash ${GIT_COMMIT_HASH} : ${GIT_COMMIT_DATE}")
+#message(STATUS "Commit hash ${GIT_COMMIT_HASH} : ${GIT_COMMIT_DATE}")
 
 
 # Visual Studio stores user build settings in file 'CmakeSettings.json'.  We would like to manage that via a project template.
@@ -100,8 +100,9 @@ endif()
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
 #Variable used to set the VM date
-set(BUILT_FROM "${GIT_DESCRIBE} - Commit: ${GIT_COMMIT_HASH} - Date: ${GIT_COMMIT_DATE}")
-message(STATUS ${BUILT_FROM})
+#set(BUILT_FROM "${GIT_DESCRIBE} - Commit: ${GIT_COMMIT_HASH} - Date: ${GIT_COMMIT_DATE}")
+set(BUILT_FROM "Guix build, refer there")
+#message(STATUS ${BUILT_FROM})
 
 # Avoid using the d postfix to debug libraries
 # Otherwise, debug libraries change name and breaks FFI bindings
