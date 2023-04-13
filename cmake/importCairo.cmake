@@ -1,4 +1,8 @@
-if (BUILD_BUNDLE)
+find_package(Cairo)
+
+if (Cairo_FOUND)
+  add_dependencies(${VM_LIBRARY_NAME} Cairo::Cairo)
+elseif (BUILD_BUNDLE)
 
   # Cairo does not support building on CMake
   if (WIN)
